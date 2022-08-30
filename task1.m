@@ -2,16 +2,20 @@
 Fs = 44100; 
 nBits = 16; 
 nChannels = 2 ; 
-ID = -1; % default audio input device 
+ID = -1;  % default audio input device 
 
+% f-transform of the wavelength of 'see'
 x=audioread('SEE.wav');
-x=x';
+x=x'; % do a tanspose
 x1=x(1:88200);
 x2=x(88201:176400);
 x=[x1,x2];
 x=fseries(x);
+
+
+% f-transform of the wavelength of 'car'
 y=audioread('CAR.wav');
-y=y';
+y=y'; % do a transpose
 y1=y(1:88200);
 y2=y(88201:176400);
 y=[y1,y2];
